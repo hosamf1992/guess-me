@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Guess Me!</title>
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+    <div class="blur-stage">
+
+  
+  <header class="box">
+    <img width="250" class="img-fluid"
+      src="https://i.pinimg.com/originals/fe/e0/24/fee0246d3c4bddd06e95b41afbf13024.png" />
+      
+    <h1>Guess Who</h1>
+  </header>
+  
+  <main>
+    <section class="game-start">
+      <h2>Think of Someone...</h2>
+      <button onclick="onStartGuessing()" class="btn btn-lg btn-warning">I'm Ready!</button>
+    </section>
+    <section class="quest" style="display: none">
+      <h2></h2>
+      <button onclick="onUserResponse('yes')" class="btn btn-primary">Yes</button>
+      <button onclick="onUserResponse('no')" class="btn btn-warning">No</button>
+    </section>
+    <section class="new-quest" style="display: none">
+      <h2>OK, I gave up...</h2>
+
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="newGuess" class="col-sm-6 control-label">You thought of: </label>
+          <div class="col-sm-12">
+            <input name="newGuess" type="txt" class="form-control" id="newGuess" placeholder="Your Guess" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="newQuest" class="col-sm-6 control-label">Question to differentiate</label>
+          <div class="col-sm-12">
+            <input name="newQuest" type="txt" class="form-control" id="newQuest"
+              placeholder="The answer is YES for yours" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" onclick="onAddGuess();return false;" class="btn btn-dark">
+              Make me Smarter!
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    cofferight &copy; 2019
+  </footer>
+</div>
+
+  <div class="modal-msg">
+
+
+      <h1 class="modal-title"></h1>
+      <img class="img-fluid" src="https://i3.silvergames.com/p/b/akinator.png">
+      <button onclick="onStartAgain()" class="mbtn btn btn-lg btn-warning">Play Again!</button>
+
+  
+  
+    </div>
+
+
+  <script src="lib/jquery/jquery.js"></script>
+  <script src="js/util-service.js"></script>
+  <script src="js/quest-service.js"></script>
+  <script src="js/quest-controller.js"></script>
+
+</body>
+
+</html>
